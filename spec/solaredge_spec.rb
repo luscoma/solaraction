@@ -4,7 +4,7 @@ require 'solaredge'
 
 describe SE::ApiData do
 
-  subject { SE::ApiData::new 'key', 'site' }
+  subject { SE::ApiData.new 'key', 'site' }
 
   TEST_JSON = '{"apiKey": "test_key", "siteId": "test_site"}'
 

@@ -4,13 +4,19 @@
 module SE
   require 'json'
 
+  # Indicates incomplete or invalid API data
   class InvalidApiData < StandardError
   end
 
   # Class that holds apikey and site id
   class ApiData
-    attr_accessor :api_key, :site_id
+    # @return [String] The API key to use
+    attr_accessor :api_key
+    # @return [String] The site id to query
+    attr_accessor :site_id
 
+    # Loads data from a JSON file.
+    # @note Expected to have "apiKey" and "siteId" keys.
     # @param fname [string] Filename of the jsonfile
     # @return [ApiData]
     def self.from_file(fname)
@@ -18,6 +24,8 @@ module SE
       new(data['apiKey'], data['siteId'])
     end
 
+    # @param api_key [String] The API Key
+    # @param site_id [String] The site id
     def initialize(api_key, site_id)
       raise InvalidApiData, 'Missing Api Key' unless api_key
       raise InvalidApiData, 'Missing Site Id' unless site_id
