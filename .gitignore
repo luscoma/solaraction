@@ -1,5 +1,8 @@
 apikey.json
 
+# VIM swap files
+*.swp
+
 *.gem
 *.rbc
 /.config
