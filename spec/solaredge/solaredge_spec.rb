@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'solaredge'
+require 'solaredge/api_data'
 
 describe SE::ApiData do
 
