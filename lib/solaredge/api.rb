@@ -4,6 +4,7 @@
 require 'httparty'
 require 'solaredge/url_mixin'
 
+# Module for solaredge APIs
 module SE
   # API Helper class
   class Api
@@ -30,7 +31,8 @@ module SE
         last_month_energy: o['lastMonthData']['energy'],
         last_year_energy: o['lastYearData']['energy'],
         lifetime_energy: o['lifeTimeData']['energy'],
-        update_time: DateTime.parse(o['lastUpdateTime']))
+        update_time: DateTime.parse(o['lastUpdateTime'])
+      )
     end
 
     # Returns fun facts about polution reduced e.g. light bulbs replaced and
@@ -41,7 +43,8 @@ module SE
       EnvBenefits.new(
         kg_co2_saved: o['gasEmissionSaved']['co2'],
         trees_planted: o['treesPlanted'],
-        lightbulbs_replaced: o['lightBulbs'])
+        lightbulbs_replaced: o['lightBulbs']
+      )
     end
 
     # Returns amount of energy produced over a given date range
@@ -75,17 +78,20 @@ module SE
 
   # Helper structs for formatting data
   EnergyProduced = Struct.new(
-    :energy, :start_date, :end_date, keyword_init: true)
+    :energy, :start_date, :end_date, keyword_init: true
+  )
 
   PowerValue = Struct.new(:date_time, :value, keyword_init: true)
 
   EnvBenefits = Struct.new(
     :kg_co2_saved, :trees_planted, :lightbulbs_replaced,
-    keyword_init: true)
+    keyword_init: true
+  )
 
   SiteOverview = Struct.new(
     :current_power, :last_day_energy, :last_month_energy, :last_year_energy,
-    :lifetime_energy, :update_time, keyword_init: true)
+    :lifetime_energy, :update_time, keyword_init: true
+  )
 
   # Add a to_json method that makes sense
   [EnergyProduced, PowerValue, EnvBenefits, SiteOverview].each do |c|
@@ -95,5 +101,4 @@ module SE
       end
     end
   end
-
 end
