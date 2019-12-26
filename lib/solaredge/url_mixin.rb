@@ -30,14 +30,24 @@ module SE
 
   # Solaredge API parameter helpers that are mixed into Iri
   module IriHelpers
-    # TODO parametertize this
-    def date_range
-      add(startDate: '2019-12-23', endDate: '2019-12-24')
+    TIME_FORMAT = '%Y-%m-%d %H:%M:%S'
+
+    # @param start_date [Date, nil] Defaults to yesterday
+    # @param end_date [Date, nil] Defaults to today
+    def date_range(start_date, end_date)
+      start_date ||= Date.today - 1
+      end_date ||= Date.today
+      add(startDate: start_date.to_s, endDate: end_date.to_s)
     end
 
-    # TODO parametertize this
-    def time_range
-      add(startTime: '2019-12-23 12:00:00', endTime: '2019-12-24 00:00:00')
+    # @param start_time [DateTime, nil] Defaults to today midnight.
+    # @param end_time [DateTime, nil] Defaults to tomorrow midnight.
+    def time_range(start_time, end_time)
+      start_time ||= Date.today.to_datetime
+      end_time ||= (Date.today + 1).to_datetime
+      add(
+        startTime: start_time.strftime(TIME_FORMAT),
+        endTime: end_time.strftime(TIME_FORMAT))
     end
 
     # Does nothing, useful for testing
