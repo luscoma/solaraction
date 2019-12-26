@@ -33,6 +33,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.9.0)
     rspec-support (3.9.0)
+    timecop (0.9.1)
 
 PLATFORMS
   ruby
@@ -44,6 +45,7 @@ DEPENDENCIES
   pry-byebug
   rb-readline
   rspec
+  timecop
 
 BUNDLED WITH
    1.17.2
