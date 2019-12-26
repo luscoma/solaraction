@@ -25,11 +25,11 @@ module SE
       url = site 'overview'
       o = self.class.get(url.to_s)['overview']
       SiteOverview.new(
-        current_power: o['currentPower'],
-        last_day_power: o['lastDayData'],
-        last_month_power: o['lastMonthData'],
-        last_year_power: o['lastYearData'],
-        lifetime_power: o['lifeTimeData'],
+        current_power: o['currentPower']['power'],
+        last_day_energy: o['lastDayData']['energy'],
+        last_month_energy: o['lastMonthData']['energy'],
+        last_year_energy: o['lastYearData']['energy'],
+        lifetime_energy: o['lifeTimeData']['energy'],
         update_time: DateTime.parse(o['lastUpdateTime']))
     end
 
@@ -84,8 +84,8 @@ module SE
     keyword_init: true)
 
   SiteOverview = Struct.new(
-    :current_power, :last_day_power, :last_month_power, :last_year_power,
-    :lifetime_power, :update_time, keyword_init: true)
+    :current_power, :last_day_energy, :last_month_energy, :last_year_energy,
+    :lifetime_energy, :update_time, keyword_init: true)
 
   # Add a to_json method that makes sense
   [EnergyProduced, PowerValue, EnvBenefits, SiteOverview].each do |c|
