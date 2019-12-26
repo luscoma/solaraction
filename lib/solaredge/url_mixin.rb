@@ -35,8 +35,8 @@ module SE
     # @param start_date [Date, nil] Defaults to yesterday
     # @param end_date [Date, nil] Defaults to today
     def date_range(start_date, end_date)
-      start_date ||= Date.today - 1
-      end_date ||= Date.today
+      start_date ||= Date.today
+      end_date ||= Date.today + 1
       add(startDate: start_date.to_s, endDate: end_date.to_s)
     end
 
