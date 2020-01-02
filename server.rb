@@ -2,12 +2,16 @@
 # frozen_string_literal: true
 
 require 'sinatra'
-require 'json'
+require 'sinatra/json'
 require 'solaredge/api'
 require 'solaredge/api_data'
 
-@api = SE::Api.new SE::ApiData.from_file('./apikey.json')
+API_OBJ = SE::Api.new SE::ApiData.from_file('./apikey.json')
 
 get '/' do
-  { 'test' => 'Hello World' }.to_json
+  'Hello World'
+end
+
+get '/v1/overview' do
+  json API_OBJ.site_overview
 end

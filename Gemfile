@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'httparty'
 gem 'iri'
 gem 'sinatra'
+gem 'sinatra-contrib'
 
 
 group :development do
@@ -14,4 +15,5 @@ end
 group :testing do
   gem 'timecop'
   gem 'rspec'
+  gem 'rack-test'
 end
