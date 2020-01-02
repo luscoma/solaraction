@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'httparty'
 gem 'iri'
+gem 'sinatra'
+
 
 group :development do
   gem 'pry'
