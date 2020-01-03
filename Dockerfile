@@ -1,6 +1,5 @@
 FROM ruby:latest 
 RUN mkdir /usr/src/app 
-COPY apikey.json /usr/src/app/ 
 COPY app.rb /usr/src/app/ 
 COPY app.sh /usr/src/app/ 
 COPY Gemfile /usr/src/app/ 

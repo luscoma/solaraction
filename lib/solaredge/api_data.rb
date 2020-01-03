@@ -20,7 +20,15 @@ module SE
     # @param fname [string] Filename of the jsonfile
     # @return [ApiData]
     def self.from_file(fname)
-      data = JSON.parse(File.read(fname))
+      from_json(File.read(fname))
+    end
+
+    # Loads data from an unparsed JSON string
+    # @note Expected to have "apiKey" and "siteId" keys.
+    # @param fname [string] Filename of the jsonfile
+    # @return [ApiData]
+    def self.from_json(json)
+      data = JSON.parse(json)
       new(data['apiKey'], data['siteId'])
     end
 
