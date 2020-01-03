@@ -4,6 +4,7 @@ gem 'httparty'
 gem 'iri'
 gem 'sinatra'
 gem 'sinatra-contrib'
+gem 'gruff'
 
 
 group :development do
