@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'gruff'
+
 # Helpers for generating graphs
 module GraphUtil
   # Applies a basic theme to a given graph
@@ -8,6 +10,7 @@ module GraphUtil
     graph.hide_legend = true
     graph.hide_dots = true
     graph.marker_font_size = 18
+    graph.font = 'DejaVu-Sans'
     graph.theme = {
       colors: ['#aedaa9', '#12a702'],
       marker_color: '#dddddd',
