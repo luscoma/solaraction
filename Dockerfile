@@ -7,5 +7,5 @@ COPY Gemfile.lock /usr/src/app/
 COPY lib /usr/src/app/lib
 
 WORKDIR /usr/src/app/ 
-RUN bundle install --without=testing,development --deployment
+RUN bundle install --without=testing:development --deployment
 CMD ["sh", "-c", "./app.sh"]
