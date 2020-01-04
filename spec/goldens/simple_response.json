@@ -1,0 +1,10 @@
+{
+  "fulfillmentMessages": [{
+    "platform": "ACTIONS_ON_GOOGLE",
+    "simpleResponses": {
+      "simpleResponses": [{
+        "displayText": "displayed"
+      }]
+    }
+  }]
+}

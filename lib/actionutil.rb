@@ -11,7 +11,7 @@ module ActionUtil
 
     def initialize
       @messages = []
-      @obj = { 'fulfillmentMessages': @messages }
+      @obj = { 'fulfillmentMessages' => @messages }
     end
 
     # Builds a simple text response
@@ -23,7 +23,7 @@ module ActionUtil
       result = { 'displayText' => display_text }
       result['textToSpeech'] = speech_text unless speech_text.nil?
       # Yes it's double nested, blame google...
-      o['simpleResponses'] = { 'simpleResponses': [result] }
+      o['simpleResponses'] = { 'simpleResponses' => [result] }
       self
     end
 
