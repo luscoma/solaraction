@@ -6,7 +6,6 @@ require 'rspec'
 
 require 'server'
 require 'solaredge/api_helper'
-require 'pry'
 
 ENV['RACK_ENV'] = 'test'
 
