@@ -45,6 +45,16 @@ module ActionUtil
       self
     end
 
+    # @param suggestions [Array<String>]
+    # @return [ResponseBuilder]
+    def suggestions(suggestions:)
+      o = find_or_create('suggestions')
+      o['suggestions'] = {
+        'suggestions' => suggestions.map { |v| { 'title' => v } }
+      }
+      self
+    end
+
     # @return [Hash]
     def to_h
       @obj

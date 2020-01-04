@@ -1,0 +1,11 @@
+{
+  "fulfillmentMessages": [{
+    "platform": "ACTIONS_ON_GOOGLE",
+    "suggestions": {
+      "suggestions": [
+        {"title": "alex"},
+        {"title": "lusco"}
+      ]
+    }
+  }]
+}

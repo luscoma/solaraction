@@ -40,6 +40,11 @@ describe ActionUtil do
     expect(subject.to_h).to eq(golden('basic_card_with_image.json'))
   end
 
+  it 'generates suggestions' do
+    subject.suggestions(suggestions: ['alex', 'lusco'])
+    expect(subject.to_h).to eq(golden('suggestions.json'))
+  end
+
   it 'creates an image' do
     img = ActionUtil.image(uri: 'url', ally: 'ally')
     expect(img).to eql(
