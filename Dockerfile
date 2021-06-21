@@ -1,4 +1,4 @@
-FROM ruby:latest 
+FROM ruby:2-slim 
 RUN mkdir /usr/src/app 
 COPY app.rb /usr/src/app/ 
 COPY app.sh /usr/src/app/ 
